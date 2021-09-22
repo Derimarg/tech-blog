@@ -14,41 +14,27 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      res.render('all-posts-admin',
+      {
+        layout: 'dashboard', 
+        posts, 
+        loggedIn: true 
+      });
     })
     .catch(err => {
       console.log(err);
+      res.redirect('login');
     });
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findByPk(req.params.id, {
-    attributes: [
-      'id',
-      'post_url',
-      'title',
-      'created_at',
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
+  Post.findByPk(req.params.id)
     .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         
         res.render('edit-post', {
+          layout: 'dashboard',
           post,
           loggedIn: true
         });
