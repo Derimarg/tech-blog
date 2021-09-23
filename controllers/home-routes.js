@@ -6,16 +6,37 @@ const { Post, User, Comment } = require('../models');
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
     include: [
       {
-        model: User
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
       }
     ]
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
 
-      res.render('all-posts', {
+      res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
       });
@@ -32,15 +53,30 @@ router.get('/post/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
     include: [
       {
-        model: User
+        model: Comment,
+        attributes: [
+          'id', 
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       },
       {
-        model: Comment,
-        include: {
-          model: User
-        }
+        model: User,
+        attributes: ['username']
       }
     ]
   })

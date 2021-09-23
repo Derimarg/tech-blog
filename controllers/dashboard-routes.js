@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -10,31 +10,128 @@ router.get('/', withAuth, (req, res) => {
   Post.findAll({
     where: {
       user_id: req.session.user_id
-    }
+    },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('all-posts-admin',
-      {
-        layout: 'dashboard', 
-        posts, 
-        loggedIn: true 
-      });
+      res.render('dashboard',
+        {
+          posts,
+          loggedIn: true
+        });
     })
     .catch(err => {
       console.log(err);
-      res.redirect('login');
+      res.status(500).json(err);
     });
 });
 
+router.get('/add/', withAuth, (req, res) => {
+  Post.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_text',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+  .then(dbPostData => {
+    const posts = dbPostData.map(post => post.get({ plain: true }));
+    res.render('add-post', {
+    posts,
+    loggedIn: true
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findByPk(req.params.id)
+  Post.findOne({
+    where: {
+      id: req.params.id
+    }, 
+      attributes: [
+        'id', 
+        'title',
+        'created_at',
+        'post_body'
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_text',
+            'post_id',
+            'user_id',
+            'created_at'
+          ],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+  })
     .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-        
+
         res.render('edit-post', {
-          layout: 'dashboard',
           post,
           loggedIn: true
         });
@@ -43,6 +140,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     })
     .catch(err => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
