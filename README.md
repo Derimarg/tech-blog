@@ -88,7 +88,9 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
 - When I am idle on the site for more than a set time, I will be able to view comments but I am prompted to log in again before I can add, update, or delete comments.
 <br />
 <br />
+
 ### Example:
+
 <br />
 
 
