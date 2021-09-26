@@ -14,10 +14,10 @@
 
     <div class="">
         <div class="">
-            {{post_content}}
+            {{post_body}}
         </div>
         <div class="">
-            <b>{{user.username}}</b> | {{user.email}} | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}}
+            <b>{{user.username}}</b> | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}}
                 {{format_plural "comment" comments.length}}</a>
         </div>
     </div>
