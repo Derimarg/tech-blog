@@ -120,7 +120,7 @@ input {
 }
 
 .btn:hover {
-  background-color: var(--dark);
+  background-color: var(--indigo);
 }
 
 .btn-small {
@@ -135,6 +135,7 @@ input {
   border: none;
   outline: none;
   background-color: var(--primary);
+align: left;
 }
 
 .btn-small:hover {
@@ -276,7 +277,7 @@ footer {
 .post {
   margin-bottom: 1em;
   margin-top: 1em;
-  border: 1px solid var(--gray);
+  border: 1px ridge var(--secondary);
 }
 
 .post a {
