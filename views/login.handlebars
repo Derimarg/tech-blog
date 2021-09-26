@@ -1,19 +1,13 @@
-<div class="card">
-    <div class="card-header">
-        <h2>Login</h2>
+<form id="login-form" class="form-signin">
+    <h1 class="mb-3 font-weight-normal text-center">Please sign in</h1>
+    <label for="email-input-login" class="sr-only">email</label>
+    <input type="text" id="email-input-login" class="form-control" placeholder="Email address" required autofocus>
+    <label for="password-input-login" class="sr-only">Password</label>
+    <input type="password" id="password-input-login" class="form-control" placeholder="Password" required>
     </div>
-    <form id="login-form" class="card-body">
-        <div>
-            <label for="email-input-login">email</label>
-            <input type="text" id="email-input-login" />
-        </div>
-        <div>
-            <label for="password-input-login" class="form-label">Password</label>
-            <input type="password" id="password-input-login" />
-        </div>
-        <button type="submit" id="login-btn" class="btn">Login</button>
-        <a type="button" href="/signup">Sign up</a>
-    </form>
-</div>
+    <button type="submit" id="login-btn" class="btn">Login</button>
+    <a type="button" href="/signup" class="mb-3">Sign up</a>
+</form>
+
 
 <script src="/javascript/login.js"></script>

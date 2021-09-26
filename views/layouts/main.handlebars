@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Tech Blog</title>
 </head>
 
 <body class="flex-column min-100-vh">
   <header class="hero">
-    <h1 class="app-title"><a href="/">Tech Blog</a></h1>
+    <h1 id="techblog" class="app-title"><a href="/">Tech Blog</a></h1>
     <nav class="navbar">
       <ul>
         {{#if loggedIn}}
@@ -28,9 +28,9 @@
     {{{body}}}
   </main>
 
-  <footer class="flex-row justify-center">
-    &copy;
-    <script>document.write(new Date().getFullYear());</script> Derimar Gray
+  <footer class="blog-footer">
+    <p>&copy;
+    <script>document.write(new Date().getFullYear());</script> Tech Blog by <a href="https://www.linkedin.com/in/derimar-gray-676275132/">Derimar Gray</a>.</p>
   </footer>
 
   {{#if loggedIn}}
