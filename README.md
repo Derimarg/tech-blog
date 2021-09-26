@@ -96,6 +96,10 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
 
   ![Demo](/public/assets/images/demo-2.gif)
 
+  ![Demo](/public/assets/images/demo-3.gif)
+
+  ![Demo](/public/assets/images/demo-4.gif)
+
 
 ## Technologies
 
