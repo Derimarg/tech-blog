@@ -31,7 +31,7 @@ I want CMS-style blog site so that I can<br> publish articles, blog posts, and m
 <br />
 <br />
 
-> Link web page: https://tech-blog-dg.herokuapp.com/
+> Link web page: https://dg-tech-blog.herokuapp.com/
 
 <details open="open">
 <summary>Table of Contents</summary>
