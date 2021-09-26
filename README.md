@@ -93,7 +93,6 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
 
 <br />
 
-
   ![Demo](/public/assets/images/demo-1.gif)
 
   ![Demo](/public/assets/images/demo-2.gif)
@@ -101,7 +100,6 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
   ![Demo](/public/assets/images/demo-3.gif)
 
   ![Demo](/public/assets/images/demo-4.gif)
-
 
 ## Technologies
 
@@ -124,7 +122,6 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
 ## How to Download
 
 - Simply copy the **SSH** to the terminal or Download the **ZIP File**:
-
 
 ## Installation
 
