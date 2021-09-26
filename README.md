@@ -23,7 +23,7 @@ I want CMS-style blog site so that I can<br> publish articles, blog posts, and m
 <a href="#how-to-download"><strong>Explore the docs »</strong></a>
 <br />
 <br />
-<a href="#example">View Demo</a>
+<a href="https://drive.google.com/file/d/1ggIDJ1sTgvgWuuaisFTNsTJscwkWbCde/view?usp=sharing">View Demo</a>
 .
 <a href="https://github.com/Derimarg/tech-blog/issues">Report Bug</a>
 ·
@@ -178,9 +178,9 @@ Contributions are part of this open source project. Any contributions you make a
 For additional help or questions about collaboration, contact me at: derimargray@gmail.com
 
 - GitHub - [Derimarg](https://github.com/Derimarg/)
-
 - Linkedin - [Derimar Gray](https://www.linkedin.com/in/derimar-gray-676275132/)
 - Project Repository Link: https://github.com/Derimarg/tech-blog
+- Video demo: https://drive.google.com/file/d/1ggIDJ1sTgvgWuuaisFTNsTJscwkWbCde/view?usp=sharing
 
 [Back To Top](#tech-blog)
 
