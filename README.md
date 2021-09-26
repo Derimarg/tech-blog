@@ -121,6 +121,7 @@ These is a `CMS-style blog`, the purpose is that as a developer who writes about
 
 - Simply copy the **SSH** to the terminal or Download the **ZIP File**:
 
+
 ## Installation
 
 - Use the follow command at your terminal, **git clone** (Create a working copy at your local repository):
